@@ -1,3 +1,5 @@
+import Modal from "../UI/Modal";
+
 const Cart = (props) => {
   const cartItems = (
     <ul>
@@ -13,17 +15,19 @@ const Cart = (props) => {
       ))}
     </ul>
   );
-  return <div>
-    {cartItems}
-    <div>
-      <span>Total Level</span>
-      <span>13</span>
-    </div>
-    <div>
-      <button>Close</button>
-      <button>Submit</button>
-    </div>
-  </div>;
+  return (
+    <Modal>
+      {cartItems}
+      <div>
+        <span>Total Level</span>
+        <span>13</span>
+      </div>
+      <div>
+        <button>Close</button>
+        <button>Submit</button>
+      </div>
+    </Modal>
+  );
 };
 
 export default Cart;

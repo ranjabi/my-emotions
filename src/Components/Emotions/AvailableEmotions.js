@@ -1,3 +1,6 @@
+import EmotionItem from "./EmotionItem/EmotionItem";
+import Card from "../UI/Card";
+
 const dummy_emotions = [
   {
     id: "emo1",
@@ -38,11 +41,20 @@ const dummy_emotions = [
 ];
 
 const AvailableEmotions = () => {
-  const emotionsList = dummy_emotions.map((emotion) => <li>{emotion.name}</li>);
+  const emotionsList = dummy_emotions.map((emo) => (
+    <EmotionItem
+      key={emo.id}
+      name={emo.name}
+      description={emo.description}
+      score={emo.score}
+    />
+  ));
 
   return (
     <section>
-      <ul>{emotionsList}</ul>
+      <Card>
+        <ul>{emotionsList}</ul>
+      </Card>
     </section>
   );
 };

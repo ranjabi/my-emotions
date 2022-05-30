@@ -1,3 +1,5 @@
+import EmotionItemForm from "./EmotionItemForm";
+
 const EmotionItem = (props) => {
   return (
     <li>
@@ -5,6 +7,9 @@ const EmotionItem = (props) => {
         <h3>{props.name}</h3>
         <div>{props.description}</div>
         <div>{props.score}</div>
+      </div>
+      <div>
+        <EmotionItemForm id={props.id} />
       </div>
     </li>
   );

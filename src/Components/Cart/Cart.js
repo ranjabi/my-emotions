@@ -1,4 +1,11 @@
 import Modal from "../UI/Modal";
+import classes from "./Cart.module.css";
+
+/*
+ * Used on App.js
+ * Passed onCLose props from App.js to close the cart modal
+ * Passing onClose to Modal.js so the close button can do the same
+ */
 
 const Cart = (props) => {
   const cartItems = (
@@ -16,14 +23,14 @@ const Cart = (props) => {
     </ul>
   );
   return (
-    <Modal>
+    <Modal onClose={props.onClose}>
       {cartItems}
       <div>
         <span>Total Level</span>
         <span>13</span>
       </div>
       <div>
-        <button>Close</button>
+        <button onClick={props.onClose}>Close</button>
         <button>Submit</button>
       </div>
     </Modal>

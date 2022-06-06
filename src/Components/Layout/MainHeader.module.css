@@ -1,0 +1,17 @@
+.header {
+  background-color: rgb(228, 220, 185);
+  height: 5rem;
+  width: 100%;
+  padding: 0 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  color: rgb(87, 119, 82);
+}
+
+.header ul {
+  list-style: none;
+}

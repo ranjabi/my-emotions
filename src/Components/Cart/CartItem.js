@@ -12,8 +12,8 @@ const CartItem = (props) => {
           x <span>{quantity}</span>
         </div>
         <div>
-          <button>+</button>
-          <button>-</button>
+          <button style={{fontSize: "21px", padding: "0.2rem 1.2rem"}}>+</button>
+          <button style={{fontSize: "21px", padding: "0.2rem 1.2rem"}}>-</button>
         </div>
       </div>
     </li>

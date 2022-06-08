@@ -1,4 +1,4 @@
-import style from "./Emotion.module.css";
+import style from "./Emotions.module.css";
 import EmotionItem from "./EmotionItem";
 
 const dummy_emotions = [
@@ -43,7 +43,7 @@ const dummy_emotions = [
 const Emotions = (props) => {
   return (
     <section className={style.emotions}>
-      <h2>Choose Your Current Emotions..</h2>
+      <h2 style={{ color: "rgb(228, 220, 185)", marginBottom: "1rem" }}>What are you feeling right now?</h2>
       <ul>
         {dummy_emotions.map((emotion) => (
           <EmotionItem

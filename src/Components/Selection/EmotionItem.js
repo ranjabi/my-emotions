@@ -15,18 +15,19 @@ const EmotionItem = (props) => {
         id,
         score,
         title,
-      }));
-    
+      })
+    );
   };
 
   return (
     <li className={style.item}>
-      <Card>
-        <header>
-          <h3>{title}</h3>
-          <div>{score}</div>
-        </header>
-        <p>{description}</p>
+      <Card className={style.emotionItem}>
+        <div>
+          <header>
+            <h3>{title}</h3>
+          </header>
+          <p>{description}</p>
+        </div>
         <div>
           <button onClick={addToCartHandler}>Add</button>
         </div>

@@ -8,8 +8,8 @@ const Cart = (props) => {
 
   return (
     <Card>
-      <h2>Emotions Cart</h2>
-      <ul>
+      <h2 style={{ color: "rgb(87, 119, 82)"}}>Emotions Cart</h2>
+      <ul style={{padding: "0 1rem"}}>
         {cartItems.map((item) => (
           <CartItem
             item={{

@@ -14,31 +14,35 @@ const CartItem = (props) => {
   };
 
   return (
-    <li>
-      <header>
-        <h3>{title}</h3>
-        <div>
-          Score: {score} Total: {total}
-        </div>
-      </header>
+    <li style={{ display: "flex", justifyContent: "space-between" }}>
       <div>
+        <header>
+          <h3>{title}</h3>
+          <div>
+            Score: {score} Total: {total}
+          </div>
+        </header>
         <div>
           x <span>{quantity}</span>
         </div>
-        <div>
-          <button
-            style={{ fontSize: "21px", padding: "0.2rem 1.2rem" }}
-            onClick={addItemHandler}
-          >
-            +
-          </button>
-          <button
-            style={{ fontSize: "21px", padding: "0.2rem 1.2rem" }}
-            onClick={removeItemHandler}
-          >
-            -
-          </button>
-        </div>
+      </div>
+      <div>
+        <button
+          style={{
+            fontSize: "21px",
+            padding: "0.2rem 1.2rem",
+            margin: "0 0.6rem",
+          }}
+          onClick={addItemHandler}
+        >
+          +
+        </button>
+        <button
+          style={{ fontSize: "21px", padding: "0.2rem 1.2rem" }}
+          onClick={removeItemHandler}
+        >
+          -
+        </button>
       </div>
     </li>
   );

@@ -2,7 +2,7 @@
   background-color: rgb(228, 220, 185);
   height: 5rem;
   width: 100%;
-  padding: 0 10%;
+  padding: 0 8%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,4 +14,17 @@
 
 .header ul {
   list-style: none;
+}
+
+.header li {
+  margin: 0 0.5rem;
+}
+
+.page {
+  font-size: 17px;
+}
+
+.page:hover {
+  border-bottom: 3px solid rgb(87, 119, 82);
+  cursor: pointer;
 }

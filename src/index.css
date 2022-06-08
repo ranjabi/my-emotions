@@ -21,3 +21,7 @@ button:active {
   color: rgb(228, 220, 185);
   border-color:rgb(228, 220, 185);
 }
+
+h2 {
+  text-align: center;
+}

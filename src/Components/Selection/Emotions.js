@@ -4,7 +4,7 @@ import EmotionItem from "./EmotionItem";
 const dummy_emotions = [
   {
     id: "emo1",
-    name: "Confusion",
+    name: "Confused",
     description: "I am confused",
     score: 5,
   },
@@ -20,24 +20,18 @@ const dummy_emotions = [
     description: "I am strong",
     score: 6,
   },
-  // {
-  //   id: "emo4",
-  //   name: "Happy",
-  //   description: "I am happy",
-  //   score: 10,
-  // },
-  // {
-  //   id: "emo5",
-  //   name: "Angry",
-  //   description: "I am angry",
-  //   score: 1,
-  // },
-  // {
-  //   id: "emo6",
-  //   name: "Energized",
-  //   description: "I am energized",
-  //   score: 8,
-  // },
+  {
+    id: "emo4",
+    name: "Happy",
+    description: "I am happy",
+    score: 10,
+  },
+  {
+    id: "emo5",
+    name: "Angry",
+    description: "I am angry",
+    score: 1,
+  },
 ];
 
 const Emotions = (props) => {

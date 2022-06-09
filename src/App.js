@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Contact from "./components/Pages/Contact";
 import How from "./components/Pages/How";
+import Tracker from "./components/Tracker/Tracker";
 
 function App() {
   /* accessing showCart state */
@@ -13,6 +14,7 @@ function App() {
   return (
     <Router>
       <Layout>
+        <Tracker />
         {showCart && <Cart />}
         <Emotions />
       </Layout>

@@ -26,7 +26,6 @@ const EmotionItem = (props) => {
           <header>
             <h3>{title}</h3>
           </header>
-          <p>{description}</p>
         </div>
         <div>
           <button onClick={addToCartHandler}>Add</button>

@@ -1,16 +1,15 @@
 import { useSelector} from "react-redux";
 import Card from "../Emotions/Card";
 import CartItem from "./CartItem";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Cart = (props) => {
   const cartItems = useSelector((state) => state.cart.items);
   const [cart, setCart] = useState([]);
 
-  // const cartHandler = () => {
-
-  // }
-  console.log(cartItems);
+  const cartHandler = () => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }
 
   return (
     <Card className="w-96 pt-4 pb-16">
@@ -29,7 +28,7 @@ const Cart = (props) => {
           />
         ))}
       </ul>
-      { cartItems.length > 0 && <button className="float-right py-1 px-3 mr-4 mt-1">Submit</button>}
+      { cartItems.length > 0 && <button onClick={cartHandler} className="float-right py-1 px-3 mr-4 mt-1">Submit</button>}
     </Card>
   );
 };
@@ -38,5 +37,12 @@ export default Cart;
 
 /* 
 cart state data structure
-...
+bikin 31 object, objek ke n di hari ke n isi valuenya
+[
+  {
+    id: "emo1",
+    date: 9,
+    score: 1-5,
+  }
+]
 */

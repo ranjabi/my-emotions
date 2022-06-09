@@ -17,14 +17,12 @@ const cartSlice = createSlice({
         /* create format for new added object */
         state.items.push({
           id: newItem.id,
-          score: newItem.score,
           quantity: 1,
-          totalScore: newItem.score,
           title: newItem.title,
+          date: new Date().getDate(),
         });
       } else {
         existingItem.quantity++;
-        existingItem.totalScore += newItem.score;
       }
     },
     removeItemFromCart(state, action) {
@@ -36,7 +34,6 @@ const cartSlice = createSlice({
         state.items = state.items.filter((item) => item.id !== id);
       } else {
         existingItem.quantity--;
-        existingItem.totalScore -= existingItem.score;
       }
     },
   },

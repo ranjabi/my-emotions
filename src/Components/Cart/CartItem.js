@@ -14,23 +14,20 @@ const CartItem = (props) => {
   };
 
   return (
-    <li style={{ display: "flex", justifyContent: "space-between" }}>
+    <li style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
       <div>
         <header>
-          <h3>{title}</h3>
-          <div>
-            Score: {score} Total: {total}
-          </div>
+          <h3 className="pt-4">{title}</h3>
         </header>
         <div>
-          x <span>{quantity}</span>
+          <span>{quantity}</span> / 5
         </div>
       </div>
       <div>
         <button
           style={{
-            fontSize: "21px",
-            padding: "0.2rem 1.2rem",
+            fontSize: "18px",
+            padding: "0.1rem 1rem",
             margin: "0 0.6rem",
           }}
           onClick={addItemHandler}
@@ -38,7 +35,7 @@ const CartItem = (props) => {
           +
         </button>
         <button
-          style={{ fontSize: "21px", padding: "0.2rem 1.2rem" }}
+          style={{ fontSize: "18px", padding: "0.1rem 1rem" }}
           onClick={removeItemHandler}
         >
           -

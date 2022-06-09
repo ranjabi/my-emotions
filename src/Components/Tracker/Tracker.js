@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import Card from "../Selection/Card";
+import Card from "../Emotions/Card";
 
 const dummy_item = [...Array(31)].map((u, i) => i);
 

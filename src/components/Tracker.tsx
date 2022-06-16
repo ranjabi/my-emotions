@@ -3,37 +3,48 @@ import { useState, useEffect } from 'react';
 let dummy_item = new Array(31).fill(0);
 
 const getColor = (emoItem: any) => {
-  if (emoItem.title === 'Confused') {
-    return 'bg-lime-400';
-  } else if (emoItem.title === 'Sad') {
-    return 'bg-orange-400';
-  } else if (emoItem.title === 'Tired') {
-    return 'bg-indigo-400';
-  } else if (emoItem.title === 'Happy') {
+  if (emoItem.emo === 'Happy') {
     return 'bg-yellow-400';
-  } else if (emoItem.title === 'Angry') {
+  } else if (emoItem.emo === 'Productive') {
+    return 'bg-orange-400';
+  } else if (emoItem.emo === 'Nervous') {
+    return 'bg-purple-400';
+  } else if (emoItem.emo === 'Tired') {
+    return 'bg-amber-900';
+  } else if (emoItem.emo === 'Angry') {
     return 'bg-red-400';
-  } else {
-    return 'bg-slate-400';
+  } else if (emoItem.emo === 'Sad') {
+    return 'bg-blue-400';
+  } else if (emoItem.emo === 'Sick') {
+    return 'bg-green-400';
   }
 };
 
 function getColor2(date: any, data: any) {
   for (let item of data) {
-    if (date === item['date']) {
+    if (Number(item['date'].slice(8, 10)) === date+1) {
+      // console.log(date + getColor(item))
       return getColor(item);
     }
   }
 }
 
-function isIn(param: any, data: any) {
+function isIn(date: any, data: any) {
   for (let item of data) {
     // console.log(item["data"])
-    if (item['date'] === param) {
+    if (Number(item['date'].slice(8, 10)) === date+1) {
       return true;
     }
   }
   return false;
+}
+
+function isToday(index: any, data: any) {
+  const today = new Date().toJSON().slice(8, 10)
+    if (index+1 === Number(today)) {
+      return true 
+    }
+  return false
 }
 
 const month = [
@@ -52,21 +63,15 @@ const month = [
 ];
 
 const Tracker = (props: any) => {
-  const [tracker, setTracker] = useState([]);
 
-  const cartItems: any = JSON.parse(localStorage.getItem('cartItems') || '{}');
+  const trackerItems: any = JSON.parse(localStorage.getItem('trackerItems') || '{}');
 
   const currentMonth: String = month[new Date().getMonth()];
 
-  useEffect(() => {
-    setTracker(cartItems);
-    console.log(tracker);
-  }, []);
-
   return (
-    <section className='container mx-auto p-8 pb-16 border border-red-400'>
+    <section className='container w-8/12 lg:w-6/12 2xl:w-4/12 mx-auto px-8 py-8 pb-16 bg-white rounded-lg mb-12'>
       <h1 className="text-2xl text-center">{currentMonth}</h1>
-      <div className="flex justify-around mt-8">
+      <div className="flex justify-evenly gap-10 mt-8 text-2xl font-bold mb-2">
         <p>S</p>
         <p>M</p>
         <p>T</p>
@@ -75,20 +80,14 @@ const Tracker = (props: any) => {
         <p>F</p>
         <p>S</p>
       </div>
-      <div className="grid grid-cols-7 gap-2 pl-2 pt-4 pb-2">
+      <div className="grid grid-cols-7 gap-4 pt-4 pb-2">
         {[...Array(31)].map((val, index) => (
-          <div key={index} className={`mx-auto bg-slate-400 h-6 w-6`}></div>
-        ))}
-        {/* {[...Array(31)].map((val, index) => (
-          <div
-            className={`bg-slate-400 h-6 w-6 ${
-              isIn(index, tracker) ? getColor2(index, tracker) : ''
-            }`}
+          <div key={index}
+            className={`h-8 w-8 rounded-sm mx-auto ${
+              isIn(index, trackerItems) ? getColor2(index, trackerItems) : 'bg-slate-300 '
+            } ${isToday(index, trackerItems) ? 'h-10 w-10 border-4 border-gray-800' : ''}`}
           ></div>
-        ))} */}
-        {/* {dummy_item.map((item, index) => (
-            <div className={`bg-slate-400 h-6 w-6 ${index === item.date && getColor(item)}`}></div>
-          ))} */}
+        ))}
       </div>
     </section>
   );

@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+button {
+  @apply py-2 px-4 rounded-lg bg-blue-300
+}

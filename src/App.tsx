@@ -4,7 +4,7 @@ import Tracker from './components/Tracker';
 
 function App() {
   return (
-    <div className="">
+    <div className="bg-slate-100 py-24">
       <Tracker />
       <Emotions />
     </div>

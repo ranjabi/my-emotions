@@ -8,7 +8,7 @@ interface TrackerState {
 const dateExists = (date: string, state: TrackerState[]) =>
   state.some((object) => object.date === date);
 
-const initialState: TrackerState[] = JSON.parse(localStorage.getItem('trackerItems') || '{}');
+const initialState: TrackerState[] = JSON.parse(localStorage.getItem('trackerItems') || '[]');
 
 const trackerSlice = createSlice({
   name: 'tracker',
@@ -21,6 +21,7 @@ const trackerSlice = createSlice({
       }
       state.push(action.payload);
       window.localStorage.setItem('trackerItems', JSON.stringify(state))
+      alert('The emotion has been successfully added.');
       console.log(JSON.stringify(state));
     },
   },

@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { RootState } from '../app/store';
+import { useSelector } from 'react-redux';
 
 let dummy_item = new Array(31).fill(0);
 
@@ -64,7 +66,10 @@ const month = [
 
 const Tracker = (props: any) => {
 
-  const trackerItems: any = JSON.parse(localStorage.getItem('trackerItems') || '{}');
+  
+  const trackerItems: any = useSelector((state: RootState) => state.tracker);
+
+  // const trackerItems: any = JSON.parse(localStorage.getItem('trackerItems') || '[]');
 
   const currentMonth: String = month[new Date().getMonth()];
 

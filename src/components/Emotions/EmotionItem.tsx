@@ -1,11 +1,8 @@
 import React from 'react';
-
-import { RootState } from '../../app/store';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addEmotion } from '../../features/trackerSlice';
 
 const EmotionItem = (props: any) => {
-  const tracker = useSelector((state: RootState) => state.tracker);
   const dispatch = useDispatch();
 
   const emo = props.emo;
